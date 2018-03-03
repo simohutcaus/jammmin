@@ -1,6 +1,7 @@
 const clientID = "25b4bc3aa4924ed7bb4fb19027a073b1";
 let spotifytkn = "";
-const redirect_uri = "http://simonjammin.surge.sh";
+const redirect_uri = "http://localhost:3000";
+// redirect_uri for surge deployment is http://simonjammin.surge.sh
 
 
 
