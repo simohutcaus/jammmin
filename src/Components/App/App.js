@@ -63,6 +63,10 @@ class App extends Component {
   }
 
 search(search) {  
+    if(!search) {
+      console.log('null');
+      return;
+    }
     console.log(search);
     Spotify.search(search).then(tracks => this.setState({searchResults: tracks}));
     console.log(this.state.searchResults);
