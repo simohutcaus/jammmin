@@ -17,12 +17,13 @@ class Track extends React.Component {
         this.props.onAdd(this.props.tracks);
     }
     removeTrack() {
+        console.log('removeTrack triggered');
         this.props.onRemove(this.props.tracks);
     }
 
     renderAction() {
         if(this.props.isRemoval === true) {
-            return <a className="Track-action" onClick={this.OnRemove}>-</a>
+            return <a className="Track-action" onClick={this.removeTrack}>-</a>
         } else {
             return <a className="Track-action" onClick={this.addTrack}>+</a>
         }

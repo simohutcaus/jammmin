@@ -20,7 +20,7 @@ const Spotify = {
     },
     
     savePlaylist(playname,arraytracks) {
-
+		console.log(arraytracks + ' this is arraytracks');
         if(playname == null || arraytracks == null) {
             return
         }
@@ -46,10 +46,19 @@ const Spotify = {
                     console.log('playlistname returned');
                     return response.json().then(jsonResponse => {if (jsonResponse){
                         console.log('response2 found');
-                        let playlistid = jsonResponse.id;
-                        console.log(playlistid + 'this is playlist id');
+                        let playlistID = jsonResponse.id;
+						console.log(playlistID + 'this is playlist id');
+						console.log(arraytracks + ' arraytracks');
+						fetch(`https://api.spotify.com/v1/users/${userid}/playlists/${playlistID}/tracks?uris=${arraytracks}`, {
+							headers: {
+								Authorization: `Bearer ${spotifytkn}`
+							},
+							method: "POST"
+						})
                     }})
-                })
+				})
+				
+				
             
 
             }
